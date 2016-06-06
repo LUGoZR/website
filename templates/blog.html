@@ -25,7 +25,7 @@
                 <h2>
                     <a href="/blog/{{ item.pk }}">{{ item.title }}</a>
                 </h2>
-                <p><span class="glyphicon glyphicon-user"></span> {{ item.author }} <span class="glyphicon glyphicon-time"></span> {{ item.publish_date }}</p>
+                <p><span class="glyphicon glyphicon-user"></span> {{ item.author }} <span class="glyphicon glyphicon-time"></span> {{ item.publish_date|date:"d.m.Y H:m" }}</p>
                 <hr>
                 <img class="img-responsive" src="http://placehold.it/900x300" alt="">
                 <hr>

@@ -28,7 +28,7 @@
                     <a href="/event/{{ item.pk }}">{{ item.name }}</a>
                 </h3>
                 <div class="event-data">
-                    <small><i class="fa fa-fw fa-clock-o"></i> {{ item.create_date }}</small>
+                    <small><i class="fa fa-fw fa-clock-o"></i> {{ item.create_date|date:"d.m.Y H:m" }}</small>
                     <small><i class="fa fa-fw fa-user"></i>{{ item.lecturer }}</small>
                 </div>
                 <p>{{ item.description }}</p>

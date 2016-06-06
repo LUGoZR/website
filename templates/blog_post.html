@@ -21,7 +21,7 @@
                         <h1>{{ item.title }}</h1>
 
                         <!-- Date/Time -->
-                        <p><span class="glyphicon glyphicon-user"></span> {{ item.author }} <span class="glyphicon glyphicon-time"></span> {{ item.publish_date }}</p>
+                        <p><span class="glyphicon glyphicon-user"></span> {{ item.author }} <span class="glyphicon glyphicon-time"></span> {{ item.publish_date|date:"d.m.Y H:m" }}</p>
 
                         <hr>
 
