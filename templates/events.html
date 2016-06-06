@@ -1,43 +1,30 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} - Događaji{% endblock %}
+{% block title %}Događaji{% endblock %}
 {% block content %}
-    <header id="secondary">
-        <div class="overlay">
-            <div class="header-content">
-                <div class="header-content-inner">
-                    <h1>Kategorija</h1>
-                    <hr>
-                    <p>Događaji</p>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <!-- Page Content -->
-    <div class="container">
-
-        <!-- Projects Row -->
-        <div class="row">
-            {% for item in items %}
-            <div class="col-md-4 event">
-                <a href="/event/{{ item.pk }}">
-                    <img class="img-responsive" src="http://lightcastletech.com/wp-content/uploads/2013/08/lightcastle-django.png" alt="">
-                </a>
-                <h3>
-                    <a href="/event/{{ item.pk }}">{{ item.name }}</a>
-                </h3>
-                <div class="event-data">
-                    <small><i class="fa fa-fw fa-clock-o"></i> {{ item.create_date|date:"d.m.Y H:m" }}</small>
-                    <small><i class="fa fa-fw fa-user"></i>{{ item.lecturer }}</small>
+    {% if items %}
+        <div class="container" id="content-container">
+            <!-- Projects Row -->
+            <div class="row">
+                {% for item in items %}
+                <div class="col-md-4 event">
+                    <a href="/event/{{ item.pk }}">
+                        <img class="img-responsive" src="http://lightcastletech.com/wp-content/uploads/2013/08/lightcastle-django.png" alt="">
+                    </a>
+                    <h3>
+                        <a href="/event/{{ item.pk }}">{{ item.name }}</a>
+                    </h3>
+                    <div class="event-data">
+                        <small><i class="fa fa-fw fa-clock-o"></i> {{ item.create_date|date:"d.m.Y H:m" }}</small>
+                        <small><i class="fa fa-fw fa-user"></i>{{ item.lecturer }}</small>
+                    </div>
+                    <p class="event-info">{{ item.description }}</p>
                 </div>
-                <p>{{ item.description }}</p>
+                {% endfor %}
             </div>
-            {% endfor %}
-        </div>
-        <!-- /.row -->
+            <!-- /.row -->
 
-        {% if items %}
             <!-- Pagination -->
             <div class="row text-center">
                 <div class="col-lg-12">
@@ -67,11 +54,15 @@
                 </div>
             </div>
             <!-- /.row -->
-        {% else %}
-            <div class="notification">
-                <h2>Trenutno nema događaja. Proverite kasnije!</h2>
-                <a href="/" class="btn btn-primary btn-xl">Nazad</a>
+        </div>
+    {% else %}
+        <div id="content-container">
+            <div class="row">
+                <div class="notification">
+                    <h2>Trenutno nema događaja. Proverite kasnije!</h2>
+                    <a href="/" class="btn btn-primary btn-xl">Nazad</a>
+                </div>
             </div>
-        {% endif %}
-    </div>
+        </div>
+    {% endif %}
 {% endblock %}

@@ -1,108 +1,70 @@
 {% extends "base.html" %}
 {% load static %}
+{% block title %}Blog{% endblock %}
 {% block content %}
-<!-- Page Content -->
-    <header id="secondary">
-        <div class="overlay">
-            <div class="header-content">
-                <div class="header-content-inner">
-                    <h1>Category Name</h1>
-                    <hr>
-                    <p>Blog</p>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class="container" id="content-container">
-
-        <div class="row">
-
-            <!-- Blog Entries Column -->
-            <div class="col-md-8">
-
-                {% for item in items %}
-                <h2>
-                    <a href="/blog/{{ item.pk }}">{{ item.title }}</a>
-                </h2>
-                <p><span class="glyphicon glyphicon-user"></span> {{ item.author }} <span class="glyphicon glyphicon-time"></span> {{ item.publish_date|date:"d.m.Y H:m" }}</p>
-                <hr>
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-                <hr>
-                <p>{{ item.content }}</p>
-                <a class="btn btn-primary" href="#">Pročitaj više <span class="glyphicon glyphicon-chevron-right"></span></a>
-
-                <hr>
-                {% endfor %}
-
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="previous">
-                        <a href="#">&larr; Starije</a>
-                    </li>
-                    <li class="next">
-                        <a href="#">Novije &rarr;</a>
-                    </li>
-                </ul>
-
-            </div>
-
-            <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-4">
-
-                <!-- Blog Search Well -->
-                <div class="well">
-                    <h4>Pretraga</h4>
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
-                    </div>
-                    <!-- /.input-group -->
-                </div>
-
-                <!-- Blog Categories Well -->
-                <div class="well">
-                    <h4>Kategorije</h4>
+            <!-- Page Content -->
+            {% if items %}
+                <div class="container" id="content-container">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
+
+                        <!-- Blog Entries Column -->
+                        <div class="col-md-8">
+
+                            {% for item in items %}
+                            <h2>
+                                <a href="/blog/{{ item.pk }}">{{ item.title }}</a>
+                            </h2>
+                            <p><span class="glyphicon glyphicon-user"></span> {{ item.author }} <span class="glyphicon glyphicon-time"></span> {{ item.publish_date|date:"d.m.Y H:m" }}</p>
+                            <hr>
+                            <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                            <hr>
+                            <p class="blog-info">{{ item.content }}</p>
+                            <a class="btn btn-primary" href="#">Pročitaj više <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                            <hr>
+                            {% endfor %}
+
+                            <!-- Pager -->
+                            <ul class="pager">
+                                <li class="previous">
+                                    <a href="#">&larr; Starije</a>
                                 </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
+                                <li class="next">
+                                    <a href="#">Novije &rarr;</a>
                                 </li>
                             </ul>
+
                         </div>
-                        <!-- /.col-lg-6 -->
-                        <div class="col-lg-6">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                                <li><a href="#">Category Name</a>
-                                </li>
-                            </ul>
+
+                        <!-- Blog Sidebar Widgets Column -->
+                        <div class="col-md-4">
+
+                            <!-- Blog Search Well -->
+                            <div class="well">
+                                <h4>Pretraga</h4>
+                                <div class="input-group">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default btn-form-control" type="button">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                    </span>
+                                </div>
+                                <!-- /.input-group -->
+                            </div>
                         </div>
-                        <!-- /.col-lg-6 -->
                     </div>
                     <!-- /.row -->
                 </div>
-
-            </div>
-
-        </div>
-        <!-- /.row -->
-
-    </div>
-    <!-- /.container -->
+                <!-- /.container -->
+            {% else %}
+                <div id="content-container">
+                    <div class="row">
+                        <div class="notification">
+                            <h2>Trenutno nema objava na blogu. Proverite kasnije!</h2>
+                            <a href="/" class="btn btn-primary btn-xl">Nazad</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
 {% endblock %}

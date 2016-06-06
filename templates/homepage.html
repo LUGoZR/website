@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% block title %}Početna{% endblock %}
 {% block content %}
     <header>
         <div class="header-content">
@@ -19,7 +20,7 @@
                     <h2 class="section-heading">O nama</h2>
                     <hr class="light">
                     <p class="text-faded">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi natus quo sit? Cum illo iste itaque labore numquam repellat temporibus. Cum distinctio eius facilis id illo iusto nulla perspiciatis sed.</p>
-                    <a href="#" class="btn btn-default btn-xl">Pridruži se!</a>
+                    <a href="#contact" class="btn btn-default btn-xl page-scroll">Pridruži se!</a>
                 </div>
             </div>
         </div>
@@ -206,71 +207,4 @@
             </div>
         </div>
     </section>
-
-    <!--
-            <section id="news">
-                <div class="container-fluid" id="main-container">
-                    <h2>Najnovije vesti</h2>
-
-                    <div class="container-fluid">
-                        <div class="row">
-                            {% for vest in vesti %}
-                            <div class="col-md-4 news-post">
-                                <img src="{% static "images/girlincar.jpg" %}" alt="">
-                                <div class="news-overlay text-center">
-                                    <div class="center-block">
-                                        <h3>{{ vest.title }}</h3>
-                                        <p>{{ vest.lead }}</p>
-                                        <a href="vesti/{{ vest.id }}" class="btn btn-primary-outline">Pročitaj više</a>
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="contact">
-                <div class="container-fluid">
-                   <h2>Kontaktirajte nas!</h2>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <form>
-                                <fieldset class="form-group">
-                                    <label for="e-mail">E-mail:</label>
-                                    <input type="email" class="form-control" id="e-mail" placeholder="E-mail">
-                                </fieldset>
-                                <fieldset class="form-group">
-                                    <label for="subject">Predmet:</label>
-                                    <input type="text" class="form-control" id="subject" placeholder="Razlog kontaktiranja">
-                                </fieldset>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> Dostavljaj mi vesti na e-mail
-                                    </label>
-                                </div>
-                                <fieldset class="form-group">
-                                    <label for="message">Poruka:</label>
-                                    <textarea class="form-control" id="message" rows="10"></textarea>
-                                </fieldset>
-                                <button type="submit" class="btn btn-success-outline pull-right">Posalji</button>
-                            </form>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta explicabo, nam, ipsum aspernatur velit sint nihil maxime, ab quo odit vitae ipsam a facere expedita alias blanditiis, aliquid aperiam labore! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti debitis veritatis aspernatur. Deserunt temporibus laudantium fugiat rerum neque. Id ut fuga incidunt delectus similique, fugiat culpa voluptatem libero dignissimos nulla!</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi qui, reprehenderit et nemo! Animi natus vero, illum voluptatum quidem alias ex consequuntur quisquam ea dicta. Corrupti neque ut architecto dolorem:</p>
-                            <ul>
-                                <li>Item 1</li>
-                                <li>Item 2</li>
-                                <li>Item 3</li>
-                                <li>Item 4</li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta rerum, repellat nemo perspiciatis eius dolores ullam magni itaque odio ipsa, explicabo quod tempore eos, in nisi commodi ab! Odit, perferendis.</p>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
 {% endblock %}
