@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import News, Category, Event, Lecturer, Subscriber
+from .models import *
 
-models = [News, Category, Event, Lecturer, Subscriber]
+models = [News, Category, Event, Lecturer, Subscriber, Participant]
 admin.site.register(models)
