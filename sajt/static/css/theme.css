@@ -513,6 +513,49 @@ input[type="color"]:focus,
     outline: 0 none;
 }
 
+textarea.modal-field,
+input[type="text"].modal-field,
+input[type="password"].modal-field,
+input[type="datetime"].modal-field,
+input[type="datetime-local"].modal-field,
+input[type="date"].modal-field,
+input[type="month"].modal-field,
+input[type="time"].modal-field,
+input[type="week"].modal-field,
+input[type="number"].modal-field,
+input[type="email"].modal-field,
+input[type="url"].modal-field,
+input[type="search"].modal-field,
+input[type="tel"].modal-field,
+input[type="color"].modal-field,
+.uneditable-input.modal-field,
+.form-control.modal-field {
+    /*background: rgba(240, 95, 64, 0.9);*/
+    border-radius: 300px;
+    /*color: white;*/
+}
+
+.form-control.modal-field::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+.form-control.modal-field:-moz-placeholder {
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+.form-control.modal-field::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+.form-control.modal-field:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+
+label {
+    font-size: 14px;
+}
+
 #subscribe-box {
     width: 400px;
 }
@@ -639,4 +682,15 @@ footer {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.modal-content {
+    background: #f05f40;
+}
+
+.modal-footer,
+.modal-header,
+.modal-body {
+    border: none;
+    color: white;
 }
