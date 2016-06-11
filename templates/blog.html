@@ -18,7 +18,7 @@
                             <hr>
                             <img class="img-responsive" src="http://placehold.it/900x300" alt="">
                             <hr>
-                            <p class="blog-info">{{ item.content }}</p>
+                            {{ item.lead|safe }}
                             <a class="btn btn-primary" href="/blog/{{ item.pk }}">Pročitaj više <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                             <hr>
